@@ -1,0 +1,310 @@
+@import url('https://use.fontawesome.com/releases/v5.1.0/css/all.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+}
+
+html {
+    font-size: 10px;
+}
+
+div.background {
+    position: absolute;
+    background: url("back.jpeg") center/cover no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+form {
+    position: relative;
+    height: 50rem;
+    width: 40rem;
+    background-color: rgba(0,0,0,.8);
+    margin: 0 auto;
+    top: 50%;
+    margin-top:-25rem;
+    padding:3rem;
+    border: 1.5px solid white;
+    border-radius: 4px;
+    box-shadow: 0 0 50px;
+}  
+
+.space {
+    height: 20px;
+}
+
+span {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+/****************** STYLOWANIE PÓL FORMULARZA ************************/
+label.text {
+    position: relative;
+    display: block;
+    top: -20px;
+    left: 2px;
+    font-size: 1.5rem;
+    z-index: 1;
+    color: gray;
+    transition: all 0.3s ease;
+    height: 2rem;
+}
+
+
+input[type="text"],  input[type="number"], input[type="email"]{
+    display: block;
+    position: relative;
+    background: none;
+    border: none;
+    border-bottom:1px solid gray;
+    width: 100%;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+}
+
+input:valid[type="text"],  input:valid[type="number"], input:valid[type="email"]{
+    border-bottom: 1px solid white;
+}
+
+input:focus[type="text"], input:focus[type="number"], input:focus[type="email"]{
+    outline: none;
+    border-bottom: 1px solid rgb(7, 110, 206);
+}
+
+input:valid[type="text"] + label,  input:valid[type="number"] + label, input:valid[type="email"] + label {
+    font-size: 1rem;
+    top: -40px;
+    line-height: 150%;
+    color: white;
+}
+input:focus[type="text"] + label, input:focus[type="number"] + label, input:focus[type="email"] + label {
+    font-size: 1rem;
+    top: -40px;
+    line-height: 150%;
+    color: rgb(7, 110, 206);
+}
+
+input:hover + label {
+    color: white;
+}
+
+/*wyłączenie strzałek w inpucie typu number w Chrome i Firefox*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+
+/****************** STYLOWANIE CHECKBOX ************************/
+/* div.check { 
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: gray;
+    font-size: 1.5rem;
+}
+
+input[type="checkbox"] {
+   visibility: hidden;
+   position: absolute;
+}
+
+input[type="checkbox"]:checked + label{
+    color: white;
+}
+
+
+input[type="checkbox"] + label::before {
+    font-family: "Font Awesome 5 Free";
+    width: 10px;
+    margin-right: 6px;
+    content: '\f0c8  ';
+}
+
+input[type="checkbox"]:checked + label::before {
+    font-family: "Font Awesome 5 Free";
+    width: 10px;
+    margin-right: 6px;
+    content: '\f14a  ';
+} */
+
+
+div.check { 
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    text-align: center;
+    color: gray;
+    font-size: 1.5rem;
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+    position: absolute;
+}
+
+
+input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 3rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+input[type="checkbox"].pierwsza + label::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    height: 1em;
+    width: 1em;
+    border: 1px solid gray;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    z-index: 9999;
+}
+
+input[type="checkbox"].pierwsza + label:hover::before {
+    border: 1px solid white;
+}
+
+input[type="checkbox"].pierwsza + label::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    height: 1em;
+    width: 1em;
+    border: 1px solid gray;
+    -webkit-transition: all .75s;
+    transition: all .75s;
+}
+
+input[type="checkbox"].pierwsza:checked + label::before {
+    position: absolute;
+    content: '';
+    left: 5px;
+    height: 0.7em;
+    width: 0.45em;
+    border: 1.5px white solid;
+    border-top: none;
+    border-left: none;
+    -webkit-transform: rotate(35deg) translateY(1px);
+            transform: rotate(35deg) translateY(1px);
+}
+
+input[type="checkbox"].druga + label::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    height: 1em;
+    width: 1em;
+    border: 1px solid gray;
+    
+}
+
+input[type="checkbox"].druga + label::after {
+    position: absolute;
+    content: '';
+    left: 5px;
+    height: 0.7em;
+    width: 0.45em; 
+    border-right: 1.5px solid transparent;
+    border-bottom: 1.5px solid transparent;
+    -webkit-transform: rotate(35deg) translateY(1px);
+    transform: rotate(35deg) translateY(1px);
+    -webkit-transition: border-right 0.2s ease 0.15s, border-bottom .2s ease-in;
+    transition: border-right 0.2s ease 0.15s, border-bottom .2s ease-in;
+    z-index: 9999;
+}
+
+input[type="checkbox"].druga:checked + label::after {
+    border-right: 1.5px solid white;
+    border-bottom: 1.5px solid white; 
+}
+
+/****************** STYLOWANIE PRZYCISKU ************************/
+input[type="submit"] {
+    background: none;
+    border: none;
+    color: gray;
+    height: 30px;
+    width: 100px;
+}
+
+input[type="submit"]:hover {
+    color: rgb(7, 110, 206);
+}
+
+div.sub {
+    height: 30px;
+    width: 100px; 
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: white;
+}
+
+div.sub:hover{
+    background: none;
+    border: 1px solid rgb(7, 110, 206);
+}
+
+/**************** STYLOWANIE RADIO *******************/
+input[type="radio"] { /*w [] podajemt atrybuty*/
+    visibility: hidden; /*domyślne kropki stają się niewidoczne*/
+    position: absolute; /*ukryty element nie zajmuje miejsca*/
+}
+
+input[type="radio"] + label { /* + oznacza odniesienie się najlbliższego rodzeństwa*/
+    position: relative;
+    padding-left: 3rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;    
+}
+
+input[type="radio"] + label::before, input[type="radio"] + label::after { /*after po to, bo podczas zaznaczanai przeskalowujemy kółko dodane w before, ten z aftera zostaje) */
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 1em;
+    height: 1em;
+    border: 1px solid gray;
+    
+    border-radius: 100%;
+    
+}
+
+input[type="radio"] + label:hover::after {
+    border:1px solid white;
+}
+
+input[type="radio"]:checked + label::after {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    line-height: 1em;
+    border:1px solid white;
+    background-color: white;
+    -webkit-transition: background-color .25s ease-in-out .25s, -webkit-transform .25s ease-in-out;
+    transition: background-color .25s ease-in-out .25s, -webkit-transform .25s ease-in-out;
+    transition: transform .25s ease-in-out, background-color .25s ease-in-out .25s;
+    transition: transform .25s ease-in-out, background-color .25s ease-in-out .25s, -webkit-transform .25s ease-in-out;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Schludny formularz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="background">
+        <form>
+            <span>Formularz kontaktowy</span>
+            <div class="space"></div>
+            <div class="space"></div>
+            <input type="text" name="fname" required>
+            <label class="text" for="fname">Imię</label>
+            <div class="space"></div>
+            <input type="text" name="lname" required>
+            <label class="text" for="lname">Nazwisko</label>
+            <div class="check">
+                <input type="radio" name="plec" id="kobieta" value="K" checked>
+                <label for="kobieta">Kobieta</label>
+                <input type="radio" name="plec" id="mezczyzna" value="M">
+                <label for="mezczyzna">Mężczyzna</label>
+            </div>
+            <div class="space"></div>
+            <input type="email" name="mail" required>
+            <label class="text" for="mail">Adres e-mail</label>
+            <div class="space"></div>
+            <input type="number" name="phone_number" required>
+            <label class="text" for="phone_number">Numer telefonu</label>
+            <div class="check">
+                <input class="pierwsza" type="checkbox" name="nazwa" id="nazwa" required>
+                <label for="nazwa"> Zapoznałem się z regulaminem</label>
+            </div>
+            <div class="check">
+                <input class="druga" type="checkbox" name="2" id="2" required>
+                <label for="2"> Akceptuję RODO</label>
+            </div>
+            <div class="space"></div>
+            <div class="sub">
+                <input type="submit" value="Wyślij">
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
